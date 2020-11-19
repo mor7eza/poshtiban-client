@@ -10,13 +10,163 @@ body {
   padding: 0;
 }
 
-#login-bg {
+a {
+  text-decoration: none;
+  color: #2c5cc5;
+}
+
+input::-webkit-input-placeholder,
+button {
+  font-family: "IRANYekan", Tahoma, sans-serif;
+}
+
+input:-ms-input-placeholder,
+button {
+  font-family: "IRANYekan", Tahoma, sans-serif;
+}
+
+input::-ms-input-placeholder,
+button {
+  font-family: "IRANYekan", Tahoma, sans-serif;
+}
+
+input::placeholder,
+button {
+  font-family: "IRANYekan", Tahoma, sans-serif;
+}
+
+body {
+  direction: rtl;
+  font-family: "IRANYekan", Tahoma, sans-serif;
+  font-weight: 400;
+}
+
+#login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
   width: 100vw;
   height: 100vh;
 }
 
-#login-bg video {
+#login #login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 460px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 0.5rem 2rem 2rem;
+}
+
+#login #login-container img {
+  margin-bottom: 1rem;
+}
+
+#login #login-container .form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+#login #login-container .form-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #707070;
+  margin-bottom: 0.5rem;
+}
+
+#login #login-container .form-field input[type="text"],
+#login #login-container .form-field input[type="password"] {
+  height: 3rem;
+  width: 100%;
+  font-family: "Roboto", Tahoma, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #12344d;
+  border: 1px solid #cfd7df;
+  border-radius: 4px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+#login #login-container .form-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+#login #login-container .form-checkbox input[type="checkbox"] {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid #cfd7df;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+}
+
+#login #login-container .form-checkbox label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #707070;
+}
+
+#login #login-container .form-checkbox a {
+  font-size: 0.75rem;
+  text-align: left;
+  margin-right: auto;
+}
+
+#login #login-container button {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  padding: 13px;
+  width: 100%;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#login #login-container [type="submit"] {
+  background: -webkit-gradient(linear, left top, left bottom, from(#264966), to(#12344d));
+  background: linear-gradient(180deg, #264966, #12344d);
+}
+
+#login #login-container p {
+  margin: 2rem auto;
+  text-align: center;
+  color: #6f7c87;
+}
+
+#login video {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100vw;

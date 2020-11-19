@@ -1,0 +1,69 @@
+@font-face {
+  font-family: IRANYekan;
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/IRANYekan/IRANYekanWebLight.eot");
+  src: url("../fonts/IRANYekan/IRANYekanWebLight.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/IRANYekan/IRANYekanWebLight.woff2") format("woff2"),
+    url("../fonts/IRANYekan/IRANYekanWebLight.woff") format("woff"),
+    url("../fonts/IRANYekan/IRANYekanWebLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANYekan;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/IRANYekan/IRANYekanWeb.eot");
+  src: url("../fonts/IRANYekan/IRANYekanWeb.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/IRANYekan/IRANYekanWeb.woff2") format("woff2"),
+    url("../fonts/IRANYekan/IRANYekanWeb.woff") format("woff"),
+    url("../fonts/IRANYekan/IRANYekanWeb.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANYekan;
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/IRANYekan/IRANYekanWebMedium.eot");
+  src: url("../fonts/IRANYekan/IRANYekanWebMedium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/IRANYekan/IRANYekanWebMedium.woff") format("woff"),
+    url("../fonts/IRANYekan/IRANYekanWebMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: IRANYekan;
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/IRANYekan/IRANYekanWebBold.eot");
+  src: url("../fonts/IRANYekan/IRANYekanWebBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/IRANYekan/IRANYekanWebBold.woff") format("woff"),
+    url("../fonts/IRANYekan/IRANYekanWebBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
