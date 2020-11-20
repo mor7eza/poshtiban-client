@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const PasswordRecovery = () => {
   return (
     <div style={{ overflow: "hidden" }}>
       <div id="login">
@@ -12,21 +12,12 @@ const Login = () => {
               <label htmlFor="email">{global.tr.email}</label>
               <input type="text" id="email" placeholder={global.tr.email} />
             </div>
-            <div className="form-field">
-              <label htmlFor="password">{global.tr.password}</label>
-              <input type="password" id="password" placeholder={global.tr.password} />
-            </div>
-            <div className="form-checkbox">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember">{global.tr.remember_me}</label>
-              <Link to="/password-recovery">{global.tr.forget_password}</Link>
-            </div>
+
             <button className="btn" type="submit">
-              {global.tr.submit}
+              {global.tr.send_password_to_email}
             </button>
-            <p>{global.tr.or}</p>
-            <Link to="/register" className="btn register-btn">
-              {global.tr.register}
+            <Link to="/login" style={{ display: "block", textAlign: "center", marginTop: "2rem" }}>
+              {global.tr.enter_account}
             </Link>
           </form>
         </div>
@@ -38,4 +29,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default PasswordRecovery;

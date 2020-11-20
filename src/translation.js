@@ -7,6 +7,7 @@ module.exports = global.tr = {
   // D //
   // E //
   email: "پست الکترونیکی",
+  enter_account: "ورود به حساب کاربری",
   // F //
   forget_password: "رمز عبور را فراموش کرده اید؟",
   // G //
@@ -28,7 +29,8 @@ module.exports = global.tr = {
   remember_me: "من را بخاطر بسپار",
   register: "ایجاد حساب کاربری",
   // S //
-  submit: "ورود"
+  submit: "ورود",
+  send_password_to_email: "ارسال رمز به پست الکترونیکی"
   // T //
   // U //
   // V //
