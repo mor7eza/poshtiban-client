@@ -1,3 +1,9 @@
+body {
+  direction: rtl;
+  font-family: "IRANYekan", Tahoma, sans-serif;
+  font-weight: 400;
+}
+
 input::placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
@@ -6,4 +12,12 @@ button {
 a,
 a:visited {
   color: #2c5cc5;
+}
+
+.fa-font {
+  font-family: "IRANYekan", Tahoma, sans-serif;
+}
+
+.en-font {
+  font-family: "Roboto", Tahoma, sans-serif;
 }

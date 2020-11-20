@@ -1,0 +1,98 @@
+#login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  #login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 460px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    padding: 0.5rem 2rem 2rem;
+    img {
+      margin-bottom: 1rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+      label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #707070;
+        margin-bottom: 0.5rem;
+      }
+      input[type="text"],
+      input[type="password"] {
+        height: 3rem;
+        width: 100%;
+        font-family: "Roboto", Tahoma, sans-serif;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #12344d;
+        border: 1px solid #cfd7df;
+        border-radius: 4px;
+        padding: 14px 10px;
+        text-align: center;
+      }
+    }
+    .form-checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      input[type="checkbox"] {
+        width: 0.75rem;
+        height: 0.75rem;
+        border: 1px solid #cfd7df;
+        border-radius: 2px;
+        margin-left: 0.5rem;
+      }
+      label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #707070;
+      }
+    }
+    a {
+      font-size: 0.75rem;
+      text-align: left;
+      margin-right: auto;
+    }
+    .btn,
+    button {
+      display: block;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      padding: 13px;
+      width: 100%;
+      background: linear-gradient(180deg, #264966, #12344d);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .register-btn {
+      background: #4285f4;
+    }
+    p {
+      margin: 1.2rem auto;
+      text-align: center;
+      color: #6f7c87;
+    }
+  }
+  video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}

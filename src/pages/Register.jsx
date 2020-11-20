@@ -11,11 +11,11 @@ const Register = () => {
           <form>
             <div className="form-field">
               <label htmlFor="name">{global.tr.name}</label>
-              <input type="text" id="name" placeholder={global.tr.name} />
+              <input type="text" id="name" placeholder={global.tr.name} style={{ fontFamily: "IRANYekan" }} />
             </div>
             <div className="form-field">
               <label htmlFor="last_name">{global.tr.last_name}</label>
-              <input type="text" id="last_name" placeholder={global.tr.last_name} />
+              <input type="text" id="last_name" placeholder={global.tr.last_name} style={{ fontFamily: "IRANYekan" }} />
             </div>
             <div className="form-field">
               <label htmlFor="email">{global.tr.email}</label>
