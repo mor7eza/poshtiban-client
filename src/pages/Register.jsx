@@ -1,13 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   return (
     <div style={{ overflow: "hidden" }}>
       <div id="login">
         <div id="login-container">
           <img src={process.env.PUBLIC_URL + "/assets/img/logo.svg"} alt="Poshiban Logo" />
           <form>
+            <div className="form-field">
+              <label htmlFor="name">{global.tr.name}</label>
+              <input type="text" id="name" placeholder={global.tr.name} />
+            </div>
+            <div className="form-field">
+              <label htmlFor="last_name">{global.tr.last_name}</label>
+              <input type="text" id="last_name" placeholder={global.tr.last_name} />
+            </div>
             <div className="form-field">
               <label htmlFor="email">{global.tr.email}</label>
               <input type="text" id="email" placeholder={global.tr.email} />
@@ -16,17 +24,13 @@ const Login = () => {
               <label htmlFor="password">{global.tr.password}</label>
               <input type="password" id="password" placeholder={global.tr.password} />
             </div>
-            <div className="form-checkbox">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember">{global.tr.remember_me}</label>
-              <a href="#">{global.tr.forget_password}</a>
+            <div className="form-field">
+              <label htmlFor="confirm_password">{global.tr.confirm_password}</label>
+              <input type="password" placeholder={global.tr.confirm_password} />
             </div>
-            <button className="btn" type="submit">
-              {global.tr.submit}
-            </button>
-            <p>{global.tr.or}</p>
-            <Link to="/register" className="btn register-btn">
-              {global.tr.register}
+            <button type="submit">{global.tr.submit}</button>
+            <Link to="/login" style={{ display: "block", textAlign: "center", marginTop: "2rem" }} href="#">
+              {global.tr.already_member}
             </Link>
           </form>
         </div>
@@ -38,4 +42,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

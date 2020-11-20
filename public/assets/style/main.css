@@ -12,7 +12,6 @@ body {
 
 a {
   text-decoration: none;
-  color: #2c5cc5;
 }
 
 input::-webkit-input-placeholder,
@@ -33,6 +32,11 @@ button {
 input::placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
+}
+
+a,
+a:visited {
+  color: #2c5cc5;
 }
 
 body {
@@ -89,7 +93,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 #login #login-container .form-field label {
@@ -137,27 +141,30 @@ body {
   color: #707070;
 }
 
-#login #login-container .form-checkbox a {
+#login #login-container a {
   font-size: 0.75rem;
   text-align: left;
   margin-right: auto;
 }
 
+#login #login-container .btn,
 #login #login-container button {
+  display: block;
+  text-align: center;
   font-size: 0.875rem;
   font-weight: 600;
   color: white;
   padding: 13px;
   width: 100%;
-  background-color: #4285f4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#264966), to(#12344d));
+  background: linear-gradient(180deg, #264966, #12344d);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-#login #login-container [type="submit"] {
-  background: -webkit-gradient(linear, left top, left bottom, from(#264966), to(#12344d));
-  background: linear-gradient(180deg, #264966, #12344d);
+#login #login-container .register-btn {
+  background: #4285f4;
 }
 
 #login #login-container p {

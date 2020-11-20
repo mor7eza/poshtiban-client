@@ -29,7 +29,7 @@ body {
     .form-field {
       display: flex;
       flex-direction: column;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       label {
         font-size: 0.75rem;
         font-weight: 600;
@@ -66,25 +66,28 @@ body {
         font-weight: 600;
         color: #707070;
       }
-      a {
-        font-size: 0.75rem;
-        text-align: left;
-        margin-right: auto;
-      }
     }
+    a {
+      font-size: 0.75rem;
+      text-align: left;
+      margin-right: auto;
+    }
+    .btn,
     button {
+      display: block;
+      text-align: center;
       font-size: 0.875rem;
       font-weight: 600;
       color: white;
       padding: 13px;
       width: 100%;
-      background-color: #4285f4;
+      background: linear-gradient(180deg, #264966, #12344d);
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
-    [type="submit"] {
-      background: linear-gradient(180deg, #264966, #12344d);
+    .register-btn {
+      background: #4285f4;
     }
     p {
       margin: 2rem auto;

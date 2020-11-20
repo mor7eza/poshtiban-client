@@ -1,7 +1,9 @@
 module.exports = global.tr = {
   // A //
+  already_member: "قبلا عضو شده اید؟",
   // B //
   // C //
+  confirm_password: "تکرار رمز عبور",
   // D //
   // E //
   email: "پست الکترونیکی",
@@ -13,8 +15,10 @@ module.exports = global.tr = {
   // J //
   // K //
   // L //
+  last_name: "نام خانوادگی",
   // M //
   // N //
+  name: "نام",
   // O //
   or: "یا",
   // P //
