@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   return (
@@ -30,10 +31,13 @@ const Login = () => {
             </Link>
           </form>
         </div>
-        <video autoPlay muted loop>
+        <video autoPlay muted loop id="bg-video">
           <source src={process.env.PUBLIC_URL + "/assets/video/bg.mp4"} type="video/mp4" />
         </video>
       </div>
+      <Helmet>
+        <script>var vid=document.querySelector("video");vid.playbackRate=0.5;</script>
+      </Helmet>
     </div>
   );
 };
