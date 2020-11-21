@@ -2,8 +2,11 @@ body {
   direction: rtl;
   font-family: "IRANYekan", Tahoma, sans-serif;
   font-weight: 400;
+  background: #ebeff3;
+  color: $text-color;
 }
 
+input,
 input::placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
@@ -20,4 +23,8 @@ a:visited {
 
 .en-font {
   font-family: "Roboto", Tahoma, sans-serif;
+}
+
+input[type="checkbox"] {
+  margin-left: 0.5rem;
 }

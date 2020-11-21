@@ -1,7 +1,8 @@
-@import "reset";
-@import "general";
+@import "./utils/reset";
+@import "./utils/colors";
+@import "./utils/general";
 
-@import "login";
+@import "./pages/login";
 
 .container {
   display: flex;
@@ -43,5 +44,146 @@
         display: block;
       }
     }
+  }
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.titlebar {
+  height: 64px;
+  min-height: 64px;
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: 0.8rem;
+    margin-left: 10px;
+  }
+  .avatar {
+    width: 2rem;
+    height: 2rem;
+    background-color: #f3f1f1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.dashboard {
+  padding: 0.5rem;
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto 1fr 1fr;
+  grid-template-areas:
+    "status1 status2 status3 status3 status4 status4"
+    "todo    todo    log     log     log     log    "
+    "report  report  log     log     log     log    ";
+  grid-gap: 1rem 1rem;
+  & > div {
+    background-color: white;
+    border-radius: 4px;
+  }
+  .status {
+    padding: 1rem;
+    h3 {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+  }
+  .status1 {
+    grid-area: status1;
+  }
+  .status2 {
+    grid-area: status2;
+  }
+  .status3 {
+    grid-area: status3;
+  }
+  .status4 {
+    grid-area: status4;
+  }
+  .todo {
+    grid-area: todo;
+    padding: 1rem;
+    h2 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    form {
+      margin-top: 2rem;
+      border-bottom: 1px solid #ebeff3;
+      display: flex;
+      align-items: center;
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+      input {
+        border: none;
+        font-size: 0.875rem;
+        padding-left: 10px;
+        flex-grow: 1;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        border-bottom: 1px solid #ebeff3;
+        p {
+          font-size: 0.875rem;
+          font-weight: 600;
+          flex-grow: 1;
+        }
+        button {
+          background: linear-gradient(180deg, #fff, #f3f5f7);
+          width: 32px;
+          height: 32px;
+          border: 1px solid #cfd7df;
+          border-radius: 4px;
+          margin-left: 0.5rem;
+          cursor: pointer;
+          opacity: 0;
+        }
+        &:last-child {
+          border: none;
+        }
+        &:hover > button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .report {
+    grid-area: report;
+  }
+  .log {
+    grid-area: log;
   }
 }

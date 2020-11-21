@@ -14,27 +14,47 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 body {
   direction: rtl;
   font-family: "IRANYekan", Tahoma, sans-serif;
   font-weight: 400;
+  background: #ebeff3;
+  color: #183247;
 }
 
+input,
 input::-webkit-input-placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
 }
 
+input,
 input:-ms-input-placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
 }
 
+input,
 input::-ms-input-placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
 }
 
+input,
 input::placeholder,
 button {
   font-family: "IRANYekan", Tahoma, sans-serif;
@@ -51,6 +71,10 @@ a:visited {
 
 .en-font {
   font-family: "Roboto", Tahoma, sans-serif;
+}
+
+input[type="checkbox"] {
+  margin-left: 0.5rem;
 }
 
 #login {
@@ -255,5 +279,222 @@ a:visited {
 
 .sidebar .sidebar-item a img {
   display: block;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.titlebar {
+  height: 64px;
+  min-height: 64px;
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titlebar h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.titlebar p {
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.titlebar .avatar {
+  width: 2rem;
+  height: 2rem;
+  background-color: #f3f1f1;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.titlebar .avatar span {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dashboard {
+  padding: 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: auto 1fr 1fr;
+      grid-template-rows: auto 1fr 1fr;
+      grid-template-areas: "status1 status2 status3 status3 status4 status4" "todo    todo    log     log     log     log    " "report  report  log     log     log     log    ";
+  grid-gap: 1rem 1rem;
+}
+
+.dashboard > div {
+  background-color: white;
+  border-radius: 4px;
+}
+
+.dashboard .status {
+  padding: 1rem;
+}
+
+.dashboard .status h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.dashboard .status p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.dashboard .status1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: status1;
+}
+
+.dashboard .status2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: status2;
+}
+
+.dashboard .status3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: status3;
+}
+
+.dashboard .status4 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: status4;
+}
+
+.dashboard .todo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: todo;
+  padding: 1rem;
+}
+
+.dashboard .todo h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dashboard .todo form {
+  margin-top: 2rem;
+  border-bottom: 1px solid #ebeff3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard .todo form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.dashboard .todo form input {
+  border: none;
+  font-size: 0.875rem;
+  padding-left: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.dashboard .todo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard .todo ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ebeff3;
+}
+
+.dashboard .todo ul li p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.dashboard .todo ul li button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f3f5f7));
+  background: linear-gradient(180deg, #fff, #f3f5f7);
+  width: 32px;
+  height: 32px;
+  border: 1px solid #cfd7df;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.dashboard .todo ul li:last-child {
+  border: none;
+}
+
+.dashboard .todo ul li:hover > button {
+  opacity: 1;
+}
+
+.dashboard .report {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: report;
+}
+
+.dashboard .log {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 4;
+  grid-area: log;
 }
 /*# sourceMappingURL=main.css.map */

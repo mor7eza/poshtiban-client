@@ -5,6 +5,7 @@ module.exports = global.tr = {
   // C //
   confirm_password: "تکرار رمز عبور",
   // D //
+  dashboard: "داشبورد",
   // E //
   email: "پست الکترونیکی",
   enter_account: "ورود به حساب کاربری",
@@ -30,11 +31,12 @@ module.exports = global.tr = {
   register: "ایجاد حساب کاربری",
   // S //
   submit: "ورود",
-  send_password_to_email: "ارسال رمز به پست الکترونیکی"
+  send_password_to_email: "ارسال رمز به پست الکترونیکی",
   // T //
   // U //
   // V //
   // W //
+  welcome: "خوش آمدید"
   // X //
   // Y //
   // Z //
