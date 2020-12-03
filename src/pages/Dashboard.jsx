@@ -58,7 +58,36 @@ const Dashboard = () => {
               </li>
             </ul>
           </div>
-          <div className="report">report</div>
+          <div className="report">
+            <h2>گزارش تیکت ها</h2>
+            <table>
+              <tr className="table-header">
+                <th>دپارتمان</th>
+                <th>بررسی نشده</th>
+                <th>باز</th>
+              </tr>
+              <tr>
+                <td>حسابداری</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>حسابداری</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>حسابداری</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>حسابداری</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+            </table>
+          </div>
           <div className="log">log</div>
         </div>
       </div>

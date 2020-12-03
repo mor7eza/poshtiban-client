@@ -488,6 +488,53 @@ input[type="checkbox"] {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: report;
+  padding: 1rem;
+}
+
+.dashboard .report h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dashboard .report table {
+  overflow: scroll;
+  width: 100%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.dashboard .report table tbody {
+  overflow: auto;
+  display: block;
+  height: 150px;
+}
+
+.dashboard .report table tr.table-header {
+  padding-bottom: 0.5rem;
+}
+
+.dashboard .report table th {
+  width: 20%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #cfd7df;
+  color: #6f7c87;
+}
+
+.dashboard .report table th:first-child {
+  width: 60%;
+  text-align: right;
+}
+
+.dashboard .report table td {
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dashboard .report table td:first-child {
+  text-align: right;
 }
 
 .dashboard .log {
