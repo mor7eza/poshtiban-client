@@ -23,7 +23,7 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="sidebar-item">
-        <Link to="">
+        <Link to="/users">
           <img src={process.env.PUBLIC_URL + "/assets/img/sidebar-users.svg"} alt="users" />
         </Link>
       </div>

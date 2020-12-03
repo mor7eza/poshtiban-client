@@ -11,6 +11,7 @@ module.exports = global.tr = {
   enter_account: "ورود به حساب کاربری",
   // F //
   forget_password: "رمز عبور را فراموش کرده اید؟",
+  first_name: "نام",
   // G //
   // H //
   // I //
@@ -20,7 +21,6 @@ module.exports = global.tr = {
   last_name: "نام خانوادگی",
   // M //
   // N //
-  name: "نام",
   // O //
   or: "یا",
   // P //
@@ -29,11 +29,14 @@ module.exports = global.tr = {
   // R //
   remember_me: "من را بخاطر بسپار",
   register: "ایجاد حساب کاربری",
+  role: "نقش",
   // S //
   submit: "ورود",
   send_password_to_email: "ارسال رمز به پست الکترونیکی",
+  search: "جستجو",
   // T //
   // U //
+  users: "کاربران",
   // V //
   // W //
   welcome: "خوش آمدید"

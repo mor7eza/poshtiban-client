@@ -1,0 +1,29 @@
+.titlebar {
+  height: 64px;
+  min-height: 64px;
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: 0.8rem;
+    margin-left: 10px;
+  }
+  .avatar {
+    width: 2rem;
+    height: 2rem;
+    background-color: #f3f1f1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

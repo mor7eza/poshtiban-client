@@ -41,7 +41,7 @@ const Register = () => {
           <img src={process.env.PUBLIC_URL + "/assets/img/logo.svg"} alt="Poshiban Logo" />
           <form onSubmit={onSubmitHandler}>
             <div className="form-field">
-              <label htmlFor="name">{global.tr.name}</label>
+              <label htmlFor="name">{global.tr.first_name}</label>
               <input
                 type="text"
                 id="first_name"
