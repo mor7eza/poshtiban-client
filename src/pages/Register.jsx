@@ -46,7 +46,7 @@ const Register = () => {
                 type="text"
                 id="first_name"
                 name="first_name"
-                placeholder={global.tr.name}
+                placeholder={global.tr.first_name}
                 onChange={onChangeHandler}
                 value={values.first_name}
                 style={{ fontFamily: "IRANYekan" }}

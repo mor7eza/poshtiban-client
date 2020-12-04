@@ -182,7 +182,6 @@ input[type="checkbox"] {
 .titlebar .avatar {
   width: 2rem;
   height: 2rem;
-  background-color: #f3f1f1;
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -195,8 +194,8 @@ input[type="checkbox"] {
           justify-content: center;
 }
 
-.titlebar .avatar span {
-  color: rgba(0, 0, 0, 0.3);
+.titlebar .avatar img {
+  width: 100%;
 }
 
 #login {
@@ -559,10 +558,16 @@ input[type="checkbox"] {
 
 .users .page-content {
   background-color: white;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   width: 100%;
   height: 100%;
   padding: 1rem;
+  border-radius: 4px;
+}
+
+.users .empty-placeholder {
+  width: 30%;
+  margin: 3rem auto;
 }
 
 .page-search {
@@ -598,11 +603,7 @@ input[type="checkbox"] {
 }
 
 .page-search form input:focus {
-  border: none;
-}
-
-.page-search form input:active {
-  border: none;
+  outline: none;
 }
 
 .page-search form input::-webkit-input-placeholder {
@@ -641,20 +642,116 @@ input[type="checkbox"] {
   border-bottom: 1px solid #ebeff3;
 }
 
-.page-table tr:nth-child(2n) {
+.page-table tbody tr {
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.page-table tbody tr:nth-child(2n) {
   background-color: rgba(0, 0, 50, 0.03);
 }
 
-.page-table tr td {
+.page-table tbody tr:hover {
+  background-color: rgba(2, 184, 117, 0.6);
+  color: white;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 7px #bbb;
+          box-shadow: 0px 3px 7px #bbb;
+  font-weight: 500;
+}
+
+.page-table tbody tr td {
   font-size: 0.875rem;
 }
 
-.page-table tr td.avatar {
+.page-table tbody tr td.avatar {
   width: 2rem;
   height: 2rem;
   margin: 0.5rem;
   border-radius: 4px;
-  background-color: red;
   display: block;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile img {
+  width: 128px;
+  margin-bottom: 0.5rem;
+}
+
+.profile p {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.profile form {
+  padding: 2rem 0;
+}
+
+.profile form .input-group {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile form .input-group label {
+  display: inline-block;
+  width: 7rem;
+  font-size: 0.875rem;
+}
+
+.profile form .input-group input {
+  width: 25rem;
+  padding: 0.67rem 1rem;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.28rem;
+  outline: none;
+}
+
+.profile form .input-group input:focus {
+  border-color: #85b7d9;
+}
+
+.profile form .input-group button {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2185d0;
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.profile form .input-group button.red {
+  background-color: #db2828;
+}
+
+.profile form .input-group .radio-group {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile form .input-group .radio-group label {
+  width: 5rem;
+}
+
+.profile form .input-group .radio-group input {
+  width: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

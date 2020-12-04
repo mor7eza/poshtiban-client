@@ -3,7 +3,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Titlebar from "../components/Titlebar";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <div className="container">
       <Sidebar />

@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 
 import Sidebar from "../components/Sidebar";
 import Titlebar from "../components/Titlebar";
 import { GET_USERS } from "../graphql/queries";
+import { useHistory } from "react-router-dom";
 
 const Users = () => {
-  const { data } = useQuery(GET_USERS);
+  const history = useHistory();
+  const { data, loading } = useQuery(GET_USERS);
+  const [search, setSearch] = useState("");
+  let users;
+
+  if (data && search.length > 0) {
+    const filteredData = data.getUsers.filter((user) => {
+      if (user.first_name.includes(search) || user.last_name.includes(search) || user.email.includes(search)) {
+        return user;
+      }
+      return false;
+    });
+    if (filteredData.length > 0) users = filteredData;
+  } else if (data && !loading) users = data.getUsers;
+
   return (
     <div className="container">
       <Sidebar />
@@ -16,11 +31,16 @@ const Users = () => {
           <div className="page-search">
             <form>
               <img src={process.env.PUBLIC_URL + "/assets/img/icon-magnifier.svg"} alt="magnifier" />
-              <input type="text" placeholder={global.tr.search + " ..."} />
+              <input
+                type="text"
+                placeholder={global.tr.search + " ..."}
+                value={search}
+                onChange={(e) => setSearch(e.currentTarget.value)}
+              />
             </form>
           </div>
           <div className="page-content">
-            {data ? (
+            {users ? (
               <table className="page-table">
                 <colgroup>
                   <col style={{ width: "5%" }} />
@@ -30,28 +50,38 @@ const Users = () => {
                   <col style={{ width: "40%" }} />
                 </colgroup>
                 <thead>
-                  <th></th>
-                  <th>{global.tr.first_name}</th>
-                  <th>{global.tr.last_name}</th>
-                  <th>{global.tr.email}</th>
-                  <th>{global.tr.role}</th>
+                  <tr>
+                    <th></th>
+                    <th>{global.tr.first_name}</th>
+                    <th>{global.tr.last_name}</th>
+                    <th>{global.tr.email}</th>
+                    <th>{global.tr.role}</th>
+                  </tr>
                 </thead>
                 <tbody>
-                  {data.getUsers.map((user) => {
+                  {users.map((user) => {
                     return (
-                      <tr>
-                        <td className="avatar"></td>
+                      <tr key={user.id} onClick={(e) => history.push(`/users/${user.id}`)}>
+                        <td className="avatar">
+                          <img src={`https://avatars.dicebear.com/api/jdenticon/${user.id}.svg`} alt="avatar" />
+                        </td>
                         <td>{user.first_name}</td>
                         <td>{user.last_name}</td>
                         <td>{user.email}</td>
-                        <td>{user.role}</td>
+                        <td>
+                          {user.role === "USER"
+                            ? global.tr.user
+                            : user.role === "AGENT"
+                            ? global.tr.agent
+                            : global.tr.admin}
+                        </td>
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
             ) : (
-              "No data"
+              <img className="empty-placeholder" src={process.env.PUBLIC_URL + "/assets/img/empty.svg"} alt="no data" />
             )}
           </div>
         </div>
