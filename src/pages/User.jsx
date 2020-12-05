@@ -16,6 +16,7 @@ const User = (props) => {
               <img src={`https://avatars.dicebear.com/api/jdenticon/${id}.svg`} alt="avatar" />
               <h3>مرتضی علی یاری</h3>
               <p>مدیر</p>
+              <p>عضویت از 20 روز قبل</p>
               <form>
                 <div className="input-group">
                   <label htmlFor="first_name">{global.tr.first_name}</label>

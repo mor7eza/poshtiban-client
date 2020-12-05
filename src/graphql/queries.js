@@ -11,3 +11,19 @@ export const GET_USERS = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+  query($id: String) {
+    getUser(id: $id) {
+      id
+      first_name
+      last_name
+      email
+      role
+      gender
+      birthday
+      mobile
+      createdAt
+    }
+  }
+`;
