@@ -34,3 +34,36 @@ export const REGISTER = gql`
     }
   }
 `;
+
+export const DELETE_USER = gql`
+  mutation($id: String) {
+    deleteUser(id: $id)
+  }
+`;
+
+export const EDIT_USER = gql`
+  mutation(
+    $id: String
+    $first_name: String
+    $last_name: String
+    $role: RoleEnum
+    $gender: Boolean
+    $birthday: String
+    $mobile: String
+  ) {
+    editUser(
+      user: {
+        id: $id
+        first_name: $first_name
+        last_name: $last_name
+        role: $role
+        gender: $gender
+        birthday: $birthday
+        mobile: $mobile
+      }
+    ) {
+      code
+      success
+    }
+  }
+`;

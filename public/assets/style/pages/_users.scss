@@ -99,6 +99,11 @@
   }
   p {
     color: rgba(0, 0, 0, 0.7);
+    font-size: 0.875rem;
+  }
+  span {
+    font-size: 0.7rem;
+    margin-top: 0.4rem;
   }
   form {
     padding: 2rem 0;
@@ -134,6 +139,9 @@
         cursor: pointer;
         &.red {
           background-color: #db2828;
+        }
+        &.grey {
+          background-color: #767676;
         }
       }
       .radio-group {

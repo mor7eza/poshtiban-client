@@ -689,6 +689,12 @@ input[type="checkbox"] {
 
 .profile p {
   color: rgba(0, 0, 0, 0.7);
+  font-size: 0.875rem;
+}
+
+.profile span {
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
 }
 
 .profile form {
@@ -737,6 +743,10 @@ input[type="checkbox"] {
 
 .profile form .input-group button.red {
   background-color: #db2828;
+}
+
+.profile form .input-group button.grey {
+  background-color: #767676;
 }
 
 .profile form .input-group .radio-group {
