@@ -1,5 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import jwtDecode from "jwt-decode";
+import { useApolloClient } from "@apollo/client";
 
 export const AuthContext = createContext({
   id: "",
@@ -33,10 +34,16 @@ const authReducer = (state, action) => {
 };
 
 export const AuthProvider = ({ children }) => {
+  const client = useApolloClient();
   const [state, dispatch] = useReducer(authReducer, initialState);
 
+  if (localStorage.getItem("jwtToken") && state.id === "") {
+    const token = localStorage.getItem("jwtToken");
+    const { exp } = jwtDecode(token);
+    if (Date.now() < exp * 1000) login(localStorage.getItem("jwtToken"));
+  }
+
   function login(token) {
-    console.log("here");
     localStorage.setItem("jwtToken", token);
     const { id, first_name, last_name } = jwtDecode(token);
     dispatch({
@@ -47,6 +54,7 @@ export const AuthProvider = ({ children }) => {
 
   function logout() {
     localStorage.removeItem("jwtToken");
+    client.clearStore();
     dispatch({
       type: "LOGOUT"
     });

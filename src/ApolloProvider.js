@@ -17,7 +17,7 @@ const newApolloClient = (authToken = "") => {
   });
 };
 
-const client = newApolloClient();
+export const client = newApolloClient();
 
 export default (
   <ApolloProvider client={client}>

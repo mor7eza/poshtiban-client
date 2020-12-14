@@ -7,6 +7,8 @@ import PasswordRecovery from "./pages/PasswordRecovery";
 import Register from "./pages/Register";
 import Users from "./pages/Users";
 import User from "./pages/User";
+import Tickets from "./pages/Tickets";
+import NewTicket from "./pages/NewTicket";
 
 const Router = () => {
   return (
@@ -17,6 +19,8 @@ const Router = () => {
       <Route exact path="/" component={Dashboard} />
       <Route exact path="/users" component={Users} />
       <Route exact path="/users/:id" component={User} />
+      <Route exact path="/tickets" component={Tickets} />
+      <Route exact path="/tickets/new" component={NewTicket} />
     </BrowserRouter>
   );
 };

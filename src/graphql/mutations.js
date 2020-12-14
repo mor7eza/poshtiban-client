@@ -67,3 +67,26 @@ export const EDIT_USER = gql`
     }
   }
 `;
+
+export const CREATE_TICKET = gql`
+  mutation(
+    $userId: String
+    $subject: String
+    $department: String
+    $priority: PriorityEnum
+    $body: String
+    $status: StatusEnum
+  ) {
+    createTicket(
+      userId: $userId
+      subject: $subject
+      department: $department
+      priority: $priority
+      status: $status
+      body: $body
+    ) {
+      code
+      success
+    }
+  }
+`;

@@ -13,12 +13,12 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="sidebar-item">
-        <Link to="">
+        <Link to="/">
           <img src={process.env.PUBLIC_URL + "/assets/img/sidebar-dashboard.svg"} alt="dashboard" />
         </Link>
       </div>
       <div className="sidebar-item">
-        <Link to="">
+        <Link to="/tickets">
           <img src={process.env.PUBLIC_URL + "/assets/img/sidebar-tickets.svg"} alt="tickets" />
         </Link>
       </div>

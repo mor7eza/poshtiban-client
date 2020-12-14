@@ -14,6 +14,11 @@ const User = (props) => {
   const user_id = props.match.params.id;
   const [edit, setEdit] = useState(false);
   const [regDiff, setRegDiff] = useState();
+  const [initial, setInitial] = useState({
+    first_name: "",
+    last_name: "",
+    role: ""
+  });
   const [user, setUser] = useState({
     id: "",
     first_name: "",
@@ -27,6 +32,7 @@ const User = (props) => {
   useQuery(GET_USER, {
     onCompleted({ getUser }) {
       setUser({ ...user, ...getUser });
+      setInitial({ ...initial, ...getUser });
       let created = DateTime.fromMillis(parseInt(getUser.createdAt));
       const diff = created.diffNow(["years", "months", "days"]);
       setRegDiff(diff);
@@ -72,13 +78,19 @@ const User = (props) => {
     <div className="container">
       <Sidebar />
       <div className="main">
-        <Titlebar title={`${user.first_name} ${user.last_name}`} />
+        <Titlebar title={`${initial.first_name} ${initial.last_name}`} />
         <div className="users">
           <div className="page-content">
             <div className="profile">
               <img src={`https://avatars.dicebear.com/api/jdenticon/${user_id}.svg`} alt="avatar" />
-              <h3>{`${user.first_name} ${user.last_name}`}</h3>
-              <p>{user.role === "USER" ? global.tr.user : user.role === "AGENT" ? global.tr.agent : global.tr.admin}</p>
+              <h3>{`${initial.first_name} ${initial.last_name}`}</h3>
+              <p>
+                {initial.role === "USER"
+                  ? global.tr.user
+                  : initial.role === "AGENT"
+                  ? global.tr.agent
+                  : global.tr.admin}
+              </p>
               <span>
                 {regDiff
                   ? `${global.tr.registration_from} ${year > 0 ? `${year} ${global.tr.year}` : ""} ${

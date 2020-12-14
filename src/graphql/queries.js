@@ -27,3 +27,22 @@ export const GET_USER = gql`
     }
   }
 `;
+
+export const GET_TICKETS = gql`
+  query {
+    getTickets {
+      id
+      subject
+      priority
+      status
+      department
+      user {
+        id
+        first_name
+        last_name
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
