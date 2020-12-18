@@ -40,7 +40,9 @@ export const AuthProvider = ({ children }) => {
   if (localStorage.getItem("jwtToken") && state.id === "") {
     const token = localStorage.getItem("jwtToken");
     const { exp } = jwtDecode(token);
-    if (Date.now() < exp * 1000) login(localStorage.getItem("jwtToken"));
+    if (Date.now() < exp * 1000) {
+      login(token);
+    }
   }
 
   function login(token) {

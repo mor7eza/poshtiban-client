@@ -74,3 +74,47 @@ textarea {
     border-color: #85b7d9;
   }
 }
+
+.URGENT {
+  background-color: #db2828;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+.HIGH {
+  background-color: #f2711c;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+.NORMAL {
+  background-color: #00b5ad;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+.LOW {
+  background-color: #21ba45;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.toolbar {
+  button {
+    font-size: 0.75rem;
+    background: linear-gradient(#ffffff, #f3f5f7);
+    border-color: #cfd7df;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 0.5rem;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    margin: 0.75rem 1rem 0 0;
+    cursor: pointer;
+    img {
+      margin-left: 0.5rem;
+    }
+  }
+}

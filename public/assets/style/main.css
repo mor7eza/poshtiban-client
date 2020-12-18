@@ -135,6 +135,58 @@ textarea:focus {
   border-color: #85b7d9;
 }
 
+.URGENT {
+  background-color: #db2828;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.HIGH {
+  background-color: #f2711c;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.NORMAL {
+  background-color: #00b5ad;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.LOW {
+  background-color: #21ba45;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.toolbar button {
+  font-size: 0.75rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f5f7));
+  background: linear-gradient(#ffffff, #f3f5f7);
+  border-color: #cfd7df;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 0.5rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75rem 1rem 0 0;
+  cursor: pointer;
+}
+
+.toolbar button img {
+  margin-left: 0.5rem;
+}
+
 .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -795,5 +847,71 @@ textarea:focus {
 
 .profile form .input-group .radio-group input {
   width: 1rem;
+}
+
+.page-content {
+  padding: 2rem !important;
+}
+
+.page-content h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #183247;
+  font-size: 1.25rem;
+}
+
+.page-content h2 img {
+  margin-left: 1rem;
+}
+
+.client-spec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f3f5f7;
+  border: 1px solid #d4dce3;
+  border-radius: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.75rem;
+  color: #183247;
+  margin-right: 2.375rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.client-spec img {
+  margin-left: 0.5rem;
+}
+
+.comment {
+  margin-top: 2rem;
+}
+
+.comment img {
+  width: 2rem;
+  margin-left: 1rem;
+}
+
+.comment .comment-details h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2c5cc5;
+}
+
+.comment .comment-details .date-time {
+  font-size: 0.75rem;
+  color: #475867;
+  margin-top: 0.2rem;
+}
+
+.comment .comment-details .body {
+  font-size: 0.875rem;
+  color: #183247;
+  margin-top: 1.5rem;
+  max-width: 800px;
+  line-height: 1.8;
 }
 /*# sourceMappingURL=main.css.map */

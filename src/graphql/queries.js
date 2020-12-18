@@ -46,3 +46,29 @@ export const GET_TICKETS = gql`
     }
   }
 `;
+
+export const GET_TICKET = gql`
+  query($ticketId: String) {
+    getTicket(ticketId: $ticketId) {
+      id
+      subject
+      body
+      status
+      priority
+      user {
+        id
+        first_name
+        last_name
+      }
+      department
+      client {
+        osName
+        osVersion
+        browserName
+        browserVersion
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;

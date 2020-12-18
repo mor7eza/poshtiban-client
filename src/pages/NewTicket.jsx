@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Titlebar from "../components/Titlebar";
 import { AuthContext } from "../context/auth";
+import { osName, osVersion, browserName, browserVersion } from "react-device-detect";
 
 import { GET_TICKETS } from "../graphql/queries";
 import { CREATE_TICKET } from "../graphql/mutations";
@@ -21,7 +22,7 @@ const NewTicket = () => {
 
   const onSubmitHandler = (e) => {
     createTicket({
-      variables: { ...values, userId: context.id },
+      variables: { ...values, userId: context.id, osName, osVersion, browserName, browserVersion },
       refetchQueries: [{ query: GET_TICKETS }]
     });
     history.push("/tickets");

@@ -76,6 +76,10 @@ export const CREATE_TICKET = gql`
     $priority: PriorityEnum
     $body: String
     $status: StatusEnum
+    $osVersion: String
+    $osName: String
+    $browserName: String
+    $browserVersion: String
   ) {
     createTicket(
       userId: $userId
@@ -84,6 +88,10 @@ export const CREATE_TICKET = gql`
       priority: $priority
       status: $status
       body: $body
+      osName: $osName
+      osVersion: $osVersion
+      browserName: $browserName
+      browserVersion: $browserVersion
     ) {
       code
       success

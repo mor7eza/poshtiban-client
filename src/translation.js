@@ -30,13 +30,13 @@ module.exports = global.tr = {
   // G //
   gender: "جنسیت",
   // H //
-  high: "زیاد",
+  high: "بالا",
   // I //
   // J //
   // K //
   // L //
   last_name: "نام خانوادگی",
-  low: "کم",
+  low: "پایین",
   // M //
   mobile: "تلفن همراه",
   male: "مرد",
