@@ -56,7 +56,6 @@ export const GET_TICKET = gql`
       status
       priority
       user {
-        id
         first_name
         last_name
       }
@@ -67,8 +66,23 @@ export const GET_TICKET = gql`
         browserName
         browserVersion
       }
+      comments {
+        user {
+          id
+          first_name
+          last_name
+        }
+        body
+        createdAt
+      }
       createdAt
       updatedAt
     }
+  }
+`;
+
+export const GET_DASHBOARD = gql`
+  query {
+    getDashboardStatus
   }
 `;

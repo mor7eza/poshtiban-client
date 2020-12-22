@@ -98,3 +98,30 @@ export const CREATE_TICKET = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation($ticketId: String, $userId: String, $body: String) {
+    addComment(ticketId: $ticketId, userId: $userId, body: $body) {
+      code
+      success
+    }
+  }
+`;
+
+export const CHANGE_TICKET_PRIORITY = gql`
+  mutation($ticketId: String, $priority: PriorityEnum) {
+    changeTicketPriority(ticketId: $ticketId, priority: $priority) {
+      code
+      success
+    }
+  }
+`;
+
+export const CHANGE_TICKET_STATUS = gql`
+  mutation($ticketId: String, $status: StatusEnum) {
+    changeTicketStatus(ticketId: $ticketId, status: $status) {
+      code
+      success
+    }
+  }
+`;

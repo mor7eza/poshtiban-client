@@ -96,7 +96,13 @@ const NewTicket = () => {
                   <button type="button" onClick={onSubmitHandler}>
                     {global.tr.submit_ticket}
                   </button>
-                  <button type="button" className="grey">
+                  <button
+                    type="button"
+                    className="grey"
+                    onClick={(e) => {
+                      history.push("/tickets");
+                    }}
+                  >
                     {global.tr.cancel}
                   </button>
                 </div>

@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 
 import Sidebar from "../components/Sidebar";
 import Titlebar from "../components/Titlebar";
+import { GET_DASHBOARD } from "../graphql/queries";
 
 const Dashboard = (props) => {
+  const [statusCount, setStatusCount] = useState([0, 0, 0, 0]);
+  useQuery(GET_DASHBOARD, {
+    onCompleted(data) {
+      setStatusCount(data.getDashboardStatus);
+    }
+  });
+
   return (
     <div className="container">
       <Sidebar />
@@ -11,12 +20,21 @@ const Dashboard = (props) => {
         <Titlebar title={global.tr.dashboard} />
         <div className="dashboard">
           <div className="status status1">
-            <h3>بررسی نشده</h3>
-            <p>5</p>
+            <h3>{global.tr.open_ticket}</h3>
+            <p>{statusCount[0]}</p>
           </div>
-          <div className="status status2">status2</div>
-          <div className="status status3">status3</div>
-          <div className="status status4">status4</div>
+          <div className="status status2">
+            <h3>{global.tr.pending_ticket}</h3>
+            <p>{statusCount[1]}</p>
+          </div>
+          <div className="status status3">
+            <h3>{global.tr.resolved_ticket}</h3>
+            <p>{statusCount[2]}</p>
+          </div>
+          <div className="status status4">
+            <h3>{global.tr.closed_ticket}</h3>
+            <p>{statusCount[3]}</p>
+          </div>
           <div className="todo">
             <h2>لیست کارها(4)</h2>
             <form>

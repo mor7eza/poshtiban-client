@@ -163,6 +163,28 @@ textarea:focus {
   color: white;
 }
 
+.URGENT-text {
+  color: #db2828;
+}
+
+.HIGH-text {
+  color: #f2711c;
+}
+
+.NORMAL-text {
+  color: #00b5ad;
+}
+
+.LOW-text {
+  color: #21ba45;
+}
+
+.toolbar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .toolbar button {
   font-size: 0.75rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f5f7));
@@ -185,6 +207,18 @@ textarea:focus {
 
 .toolbar button img {
   margin-left: 0.5rem;
+}
+
+.segment {
+  padding: 1rem;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+          box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.28rem;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .sidebar {
@@ -888,6 +922,13 @@ textarea:focus {
 
 .comment {
   margin-top: 2rem;
+  max-width: 1200px;
+}
+
+.comment:nth-child(2n) {
+  background-color: #f5f7f9;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .comment img {
@@ -910,8 +951,68 @@ textarea:focus {
 .comment .comment-details .body {
   font-size: 0.875rem;
   color: #183247;
-  margin-top: 1.5rem;
-  max-width: 800px;
+  margin-top: 1rem;
+  max-width: 1200px;
   line-height: 1.8;
+}
+
+.ticket-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ticket-reply textarea {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
+
+.ticket-reply .input-group {
+  margin-top: 2rem;
+}
+
+.ticket-reply .input-group button {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2185d0;
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.ticket-reply .input-group button.red {
+  background-color: #db2828;
+}
+
+.ticket-reply .input-group button.grey {
+  background-color: #767676;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=main.css.map */
