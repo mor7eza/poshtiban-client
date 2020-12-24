@@ -4,6 +4,7 @@ module.exports = global.tr = {
   agent: "کارشناس",
   admin: "مدیر",
   ago: "قبل",
+  add_todo: "افزودن وظیفه",
   // B //
   birthday: "تاریخ تولد",
   body: "متن",
@@ -77,6 +78,7 @@ module.exports = global.tr = {
   // T //
   today: "امروز",
   tickets: "تیکت ها",
+  todo_lists: "لیست وظایف",
   // U //
   users: "کاربران",
   user: "کاربر",

@@ -82,7 +82,12 @@ export const GET_TICKET = gql`
 `;
 
 export const GET_DASHBOARD = gql`
-  query {
+  query($userId: String) {
     getDashboardStatus
+    getTodos(userId: $userId) {
+      id
+      body
+      completed
+    }
   }
 `;

@@ -1,17 +1,49 @@
-import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
+import React, { useContext, useState } from "react";
+import { useQuery, useMutation } from "@apollo/client";
 
 import Sidebar from "../components/Sidebar";
 import Titlebar from "../components/Titlebar";
 import { GET_DASHBOARD } from "../graphql/queries";
+import { ADD_TODO, COMPLETE_TODO } from "../graphql/mutations";
+import { AuthContext } from "../context/auth";
 
 const Dashboard = (props) => {
+  const context = useContext(AuthContext);
   const [statusCount, setStatusCount] = useState([0, 0, 0, 0]);
+  const [todos, setTodos] = useState([]);
+  const [todoBody, setTodoBody] = useState("");
   useQuery(GET_DASHBOARD, {
+    variables: { userId: context.id },
     onCompleted(data) {
       setStatusCount(data.getDashboardStatus);
+      setTodos(data.getTodos);
     }
   });
+  const [addTodo] = useMutation(ADD_TODO);
+  const [completeTodo] = useMutation(COMPLETE_TODO);
+
+  const onTodoSubmitHandler = (e) => {
+    e.preventDefault();
+    addTodo({
+      variables: { userId: context.id, body: todoBody },
+      refetchQueries: [{ query: GET_DASHBOARD, variables: { userId: context.id } }]
+    });
+    setTodoBody("");
+    window.location.reload();
+  };
+
+  const onCompleteTodoHandler = (e) => {
+    completeTodo({ variables: { todoId: e.target.name } });
+    let newTodos = [];
+    todos.map((todo) => {
+      if (todo.id === e.target.name) {
+        newTodos = [...newTodos, { __typename: "TODO", id: todo.id, body: todo.body, completed: !todo.completed }];
+      } else {
+        newTodos = [...newTodos, todo];
+      }
+    });
+    setTodos(newTodos);
+  };
 
   return (
     <div className="container">
@@ -36,45 +68,30 @@ const Dashboard = (props) => {
             <p>{statusCount[3]}</p>
           </div>
           <div className="todo">
-            <h2>لیست کارها(4)</h2>
-            <form>
+            <h2>{global.tr.todo_lists}</h2>
+            <form onSubmit={onTodoSubmitHandler}>
               <button type="submit">
                 <img src={process.env.PUBLIC_URL + "/assets/img/todo-plus.svg"} alt="add todo" />
               </button>
-              <input type="text" placeholder="افزودن کار" />
+              <input
+                type="text"
+                placeholder={global.tr.add_todo}
+                value={todoBody}
+                onChange={(e) => setTodoBody(e.target.value)}
+              />
             </form>
-            <ul>
-              <li>
-                <input type="checkbox" name="" id="" />
-                <p>بررسی تیکت</p>
-                <button>
-                  <img src={process.env.PUBLIC_URL + "/assets/img/todo-edit.svg"} alt="edit todo" />
-                </button>
-                <button>
-                  <img src={process.env.PUBLIC_URL + "/assets/img/todo-trash.svg"} alt="deletd todo" />
-                </button>
-              </li>
-              <li>
-                <input type="checkbox" name="" id="" />
-                <p>بررسی تیکت</p>
-                <button>
-                  <img src={process.env.PUBLIC_URL + "/assets/img/todo-edit.svg"} alt="edit todo" />
-                </button>
-                <button>
-                  <img src={process.env.PUBLIC_URL + "/assets/img/todo-trash.svg"} alt="deletd todo" />
-                </button>
-              </li>
-              <li>
-                <input type="checkbox" name="" id="" />
-                <p>بررسی تیکت</p>
-                <button>
-                  <img src={process.env.PUBLIC_URL + "/assets/img/todo-edit.svg"} alt="edit todo" />
-                </button>
-                <button>
-                  <img src={process.env.PUBLIC_URL + "/assets/img/todo-trash.svg"} alt="deletd todo" />
-                </button>
-              </li>
-            </ul>
+            {todos.length ? (
+              <ul>
+                {todos.map((todo) => {
+                  return (
+                    <li key={todo.id}>
+                      <input type="checkbox" name={todo.id} onChange={onCompleteTodoHandler} />
+                      <p className={todo.completed ? "linethrough" : ""}>{todo.body}</p>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
           </div>
           <div className="report">
             <h2>گزارش تیکت ها</h2>

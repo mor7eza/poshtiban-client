@@ -125,3 +125,21 @@ export const CHANGE_TICKET_STATUS = gql`
     }
   }
 `;
+
+export const ADD_TODO = gql`
+  mutation($userId: String, $body: String) {
+    addTodo(userId: $userId, body: $body) {
+      code
+      success
+    }
+  }
+`;
+
+export const COMPLETE_TODO = gql`
+  mutation($todoId: String) {
+    completeTodo(todoId: $todoId) {
+      code
+      success
+    }
+  }
+`;

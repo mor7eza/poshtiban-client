@@ -221,6 +221,10 @@ textarea:focus {
   display: none !important;
 }
 
+.linethrough {
+  text-decoration: line-through;
+}
+
 .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -541,6 +545,7 @@ textarea:focus {
 }
 
 .dashboard .todo form button {
+  outline: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -554,6 +559,7 @@ textarea:focus {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  outline: none;
 }
 
 .dashboard .todo ul {
