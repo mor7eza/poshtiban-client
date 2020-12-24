@@ -12,11 +12,13 @@ const Dashboard = (props) => {
   const [statusCount, setStatusCount] = useState([0, 0, 0, 0]);
   const [todos, setTodos] = useState([]);
   const [todoBody, setTodoBody] = useState("");
+  const [departmentsStatus, setDepartmentsStatus] = useState([]);
   useQuery(GET_DASHBOARD, {
     variables: { userId: context.id },
     onCompleted(data) {
       setStatusCount(data.getDashboardStatus);
       setTodos(data.getTodos);
+      setDepartmentsStatus(data.getDepartmentsStatus);
     }
   });
   const [addTodo] = useMutation(ADD_TODO);
@@ -97,30 +99,21 @@ const Dashboard = (props) => {
             <h2>گزارش تیکت ها</h2>
             <table>
               <tr className="table-header">
-                <th>دپارتمان</th>
-                <th>بررسی نشده</th>
-                <th>باز</th>
+                <th>{global.tr.department}</th>
+                <th>{global.tr.new}</th>
+                <th>{global.tr.pending}</th>
               </tr>
-              <tr>
-                <td>حسابداری</td>
-                <td>15</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>حسابداری</td>
-                <td>15</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>حسابداری</td>
-                <td>15</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>حسابداری</td>
-                <td>15</td>
-                <td>10</td>
-              </tr>
+              {departmentsStatus.length
+                ? departmentsStatus.map((dep) => {
+                    return (
+                      <tr>
+                        <td>{dep.name}</td>
+                        <td>{dep.open}</td>
+                        <td>{dep.pending}</td>
+                      </tr>
+                    );
+                  })
+                : null}
             </table>
           </div>
           <div className="log">log</div>

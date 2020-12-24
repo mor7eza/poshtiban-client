@@ -89,5 +89,10 @@ export const GET_DASHBOARD = gql`
       body
       completed
     }
+    getDepartmentsStatus {
+      name
+      open
+      pending
+    }
   }
 `;

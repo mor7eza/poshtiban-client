@@ -49,6 +49,7 @@ module.exports = global.tr = {
   month: "ماه",
   // N //
   normal: "معمولی",
+  new: "جدید",
   // O //
   or: "یا",
   open: "باز",
