@@ -1,8 +1,22 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/auth";
+import { useHistory } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 
 const Titlebar = ({ title }) => {
   const context = useContext(AuthContext);
+  const history = useHistory();
+  if (localStorage.getItem("jwtToken") && context.id === "") {
+    const token = localStorage.getItem("jwtToken");
+    const { exp } = jwtDecode(token);
+    if (Date.now() < exp * 1000) {
+      context.login(token);
+      window.location.reload();
+    } else {
+      history.push("/login");
+    }
+  }
+  if (!localStorage.getItem("jwtToken")) history.push("/login");
   return (
     <div className="titlebar">
       <h2>{title}</h2>

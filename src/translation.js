@@ -4,6 +4,7 @@ module.exports = global.tr = {
   agent: "کارشناس",
   admin: "مدیر",
   ago: "قبل",
+  add_todo: "افزودن وظیفه",
   // B //
   birthday: "تاریخ تولد",
   body: "متن",
@@ -14,6 +15,11 @@ module.exports = global.tr = {
   created_at: "تاریخ ایجاد",
   closed: "بسته",
   create_ticket: "ثبت تیکت جدید",
+  close_ticket: "بستن تیکت",
+  closed_ticket: "تیکت بسته شده",
+  change_to_open: "تغییر وضعیت به جدید",
+  change_to_pending: "تغییر وضیت به در حال بررسی",
+  change_to_resolved: "تغییر وضعیت به پاسخ داده شده",
   // D //
   dashboard: "داشبورد",
   delete: "حذف",
@@ -30,26 +36,29 @@ module.exports = global.tr = {
   // G //
   gender: "جنسیت",
   // H //
-  high: "زیاد",
+  high: "بالا",
   // I //
   // J //
   // K //
   // L //
   last_name: "نام خانوادگی",
-  low: "کم",
+  low: "پایین",
   // M //
   mobile: "تلفن همراه",
   male: "مرد",
   month: "ماه",
   // N //
   normal: "معمولی",
+  new: "جدید",
   // O //
   or: "یا",
   open: "باز",
+  open_ticket: "تیکت جدید",
   // P //
   password: "رمز عبور",
   priority: "اولویت",
   pending: "در حال بررسی",
+  pending_ticket: "تیکت در دست بررسی",
   // Q //
   // R //
   remember_me: "من را بخاطر بسپار",
@@ -57,6 +66,8 @@ module.exports = global.tr = {
   role: "نقش",
   registration_from: "عضویت از",
   resolved: "انجام شده",
+  reply: "ارسال پاسخ",
+  resolved_ticket: "تیکت پاسخ داده شده",
   // S //
   submit: "ورود",
   send_password_to_email: "ارسال رمز به پست الکترونیکی",
@@ -68,6 +79,8 @@ module.exports = global.tr = {
   // T //
   today: "امروز",
   tickets: "تیکت ها",
+  todo_lists: "لیست وظایف",
+  tickets_status: "گزارش تیکت ها",
   // U //
   users: "کاربران",
   user: "کاربر",

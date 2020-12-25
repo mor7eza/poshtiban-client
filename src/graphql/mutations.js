@@ -76,6 +76,10 @@ export const CREATE_TICKET = gql`
     $priority: PriorityEnum
     $body: String
     $status: StatusEnum
+    $osVersion: String
+    $osName: String
+    $browserName: String
+    $browserVersion: String
   ) {
     createTicket(
       userId: $userId
@@ -84,7 +88,56 @@ export const CREATE_TICKET = gql`
       priority: $priority
       status: $status
       body: $body
+      osName: $osName
+      osVersion: $osVersion
+      browserName: $browserName
+      browserVersion: $browserVersion
     ) {
+      code
+      success
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation($ticketId: String, $userId: String, $body: String) {
+    addComment(ticketId: $ticketId, userId: $userId, body: $body) {
+      code
+      success
+    }
+  }
+`;
+
+export const CHANGE_TICKET_PRIORITY = gql`
+  mutation($ticketId: String, $priority: PriorityEnum) {
+    changeTicketPriority(ticketId: $ticketId, priority: $priority) {
+      code
+      success
+    }
+  }
+`;
+
+export const CHANGE_TICKET_STATUS = gql`
+  mutation($ticketId: String, $status: StatusEnum) {
+    changeTicketStatus(ticketId: $ticketId, status: $status) {
+      code
+      success
+    }
+  }
+`;
+
+export const ADD_TODO = gql`
+  mutation($userId: String, $body: String) {
+    addTodo(userId: $userId, body: $body) {
+      code
+      success
+    }
+  }
+`;
+
+export const COMPLETE_TODO = gql`
+  mutation($todoId: String) {
+    completeTodo(todoId: $todoId) {
       code
       success
     }

@@ -135,6 +135,96 @@ textarea:focus {
   border-color: #85b7d9;
 }
 
+.URGENT {
+  background-color: #db2828;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.HIGH {
+  background-color: #f2711c;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.NORMAL {
+  background-color: #00b5ad;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.LOW {
+  background-color: #21ba45;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: white;
+}
+
+.URGENT-text {
+  color: #db2828;
+}
+
+.HIGH-text {
+  color: #f2711c;
+}
+
+.NORMAL-text {
+  color: #00b5ad;
+}
+
+.LOW-text {
+  color: #21ba45;
+}
+
+.toolbar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.toolbar button {
+  font-size: 0.75rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f5f7));
+  background: linear-gradient(#ffffff, #f3f5f7);
+  border-color: #cfd7df;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 0.5rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75rem 1rem 0 0;
+  cursor: pointer;
+}
+
+.toolbar button img {
+  margin-left: 0.5rem;
+}
+
+.segment {
+  padding: 1rem;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+          box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  border-radius: 0.28rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.linethrough {
+  text-decoration: line-through;
+}
+
 .sidebar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -455,6 +545,7 @@ textarea:focus {
 }
 
 .dashboard .todo form button {
+  outline: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -468,6 +559,7 @@ textarea:focus {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  outline: none;
 }
 
 .dashboard .todo ul {
@@ -574,6 +666,18 @@ textarea:focus {
   -ms-grid-column: 3;
   -ms-grid-column-span: 4;
   grid-area: log;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  font-size: 0.7rem;
 }
 
 .users {
@@ -795,5 +899,138 @@ textarea:focus {
 
 .profile form .input-group .radio-group input {
   width: 1rem;
+}
+
+.page-content {
+  padding: 2rem !important;
+}
+
+.page-content h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #183247;
+  font-size: 1.25rem;
+}
+
+.page-content h2 img {
+  margin-left: 1rem;
+}
+
+.client-spec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f3f5f7;
+  border: 1px solid #d4dce3;
+  border-radius: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.75rem;
+  color: #183247;
+  margin-right: 2.375rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.client-spec img {
+  margin-left: 0.5rem;
+}
+
+.comment {
+  margin-top: 2rem;
+  max-width: 1200px;
+}
+
+.comment:nth-child(2n) {
+  background-color: #f5f7f9;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.comment img {
+  width: 2rem;
+  margin-left: 1rem;
+}
+
+.comment .comment-details h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2c5cc5;
+}
+
+.comment .comment-details .date-time {
+  font-size: 0.75rem;
+  color: #475867;
+  margin-top: 0.2rem;
+}
+
+.comment .comment-details .body {
+  font-size: 0.875rem;
+  color: #183247;
+  margin-top: 1rem;
+  max-width: 1200px;
+  line-height: 1.8;
+}
+
+.ticket-reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ticket-reply textarea {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
+
+.ticket-reply .input-group {
+  margin-top: 2rem;
+}
+
+.ticket-reply .input-group button {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2185d0;
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.ticket-reply .input-group button.red {
+  background-color: #db2828;
+}
+
+.ticket-reply .input-group button.grey {
+  background-color: #767676;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=main.css.map */

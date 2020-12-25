@@ -15,7 +15,7 @@ const Tickets = () => {
   let tickets;
 
   if (data && search.length > 0) {
-    const filteredData = data.getUsers.filter((ticket) => {
+    const filteredData = data.getTickets.filter((ticket) => {
       if (
         ticket.subject.includes(search) ||
         ticket.priority.includes(search) ||
@@ -37,7 +37,7 @@ const Tickets = () => {
       <div className="main">
         <Titlebar title={global.tr.tickets} />
         <div className="users">
-          {tickets ? (
+          {tickets || search !== "" ? (
             <div className="page-search">
               <form>
                 <img src={process.env.PUBLIC_URL + "/assets/img/icon-magnifier.svg"} alt="magnifier" />
@@ -86,7 +86,7 @@ const Tickets = () => {
                 <tbody>
                   {tickets.map((ticket) => {
                     return (
-                      <tr key={ticket.id} onClick={(e) => history.push(`/tickets/${ticket.id}`)}>
+                      <tr key={ticket.id} onClick={(e) => history.push(`/tickets/ticket/${ticket.id}`)}>
                         <td className="avatar">
                           <img src={`https://avatars.dicebear.com/api/jdenticon/${ticket.user.id}.svg`} alt="avatar" />
                         </td>
@@ -110,20 +110,22 @@ const Tickets = () => {
                           })()}
                         </td>
                         <td>
-                          {(() => {
-                            switch (ticket.priority) {
-                              case "URGENT":
-                                return global.tr.urgent;
-                              case "HIGH":
-                                return global.tr.high;
-                              case "NORMAL":
-                                return global.tr.normal;
-                              case "LOW":
-                                return global.tr.low;
-                              default:
-                                return "";
-                            }
-                          })()}
+                          <span className={ticket.priority}>
+                            {(() => {
+                              switch (ticket.priority) {
+                                case "URGENT":
+                                  return global.tr.urgent;
+                                case "HIGH":
+                                  return global.tr.high;
+                                case "NORMAL":
+                                  return global.tr.normal;
+                                case "LOW":
+                                  return global.tr.low;
+                                default:
+                                  return "";
+                              }
+                            })()}
+                          </span>
                         </td>
                         <td>{DateTime.fromMillis(parseInt(ticket.createdAt)).toISODate()}</td>
                         <td>{DateTime.fromMillis(parseInt(ticket.updatedAt)).toISODate()}</td>
