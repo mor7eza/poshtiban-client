@@ -80,6 +80,7 @@ module.exports = global.tr = {
   today: "امروز",
   tickets: "تیکت ها",
   todo_lists: "لیست وظایف",
+  tickets_status: "گزارش تیکت ها",
   // U //
   users: "کاربران",
   user: "کاربر",

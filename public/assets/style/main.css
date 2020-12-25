@@ -666,6 +666,18 @@ textarea:focus {
   -ms-grid-column: 3;
   -ms-grid-column-span: 4;
   grid-area: log;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  font-size: 0.7rem;
 }
 
 .users {

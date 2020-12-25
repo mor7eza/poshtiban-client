@@ -143,5 +143,11 @@
   }
   .log {
     grid-area: log;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 0.7rem;
   }
 }

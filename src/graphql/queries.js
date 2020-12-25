@@ -94,5 +94,6 @@ export const GET_DASHBOARD = gql`
       open
       pending
     }
+    getChartData
   }
 `;
