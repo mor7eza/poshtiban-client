@@ -73,7 +73,7 @@ const Login = (props) => {
           </form>
         </div>
         <video autoPlay muted loop id="bg-video">
-          <source src={process.env.PUBLIC_URL + "/assets/video/bg.mp4"} type="video/mp4" />
+          <source src={process.env.PUBLIC_URL + "/assets/video/bg.webm"} type="video/webm" />
         </video>
       </div>
       <Helmet>
