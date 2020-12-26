@@ -94,7 +94,7 @@ const NewTicket = () => {
 
                 <div className="input-group" style={{ marginRight: "7rem", marginTop: "1.5rem" }}>
                   <button type="button" onClick={onSubmitHandler}>
-                    {global.tr.submit_ticket}
+                    {global.tr.reply}
                   </button>
                   <button
                     type="button"
